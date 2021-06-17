@@ -21,10 +21,10 @@
                         <tbody>
 
                             <?php
-                            require 'function.php';
+                            require 'config.php';
                             $no = 1;
 
-                            $sql = $conn->query("SELECT * FROM kas WHERE jenis = 'Masuk'");
+                            $sql = $link->query("SELECT * FROM kas WHERE jenis = 'Masuk'");
                             while ($data = $sql->fetch_assoc()) {
 
                             ?>
@@ -116,7 +116,7 @@
                     $tgl = $_POST['tgl'];
                     $jml = $_POST['jml'];
 
-                    $sql = $conn->query("INSERT INTO kas (kode, keterangan, tgl, jumlah, jenis, keluar)VALUES('$kode','$ket','$tgl','$jml','masuk',0)");
+                    $sql = $link->query("INSERT INTO kas (kode, keterangan, tgl, jumlah, jenis, keluar)VALUES('$kode','$ket','$tgl','$jml','masuk',0)");
                     if ($sql) {
                 ?>
                         <script type="text/javascript">
@@ -197,7 +197,7 @@
                     $tgl = $_POST['tgl'];
                     $jml = $_POST['jml'];
 
-                    $sql = $conn->query("UPDATE kas SET keterangan = '$ket', tgl = '$tgl', jumlah = '$jml' WHERE kode = '$kode'");
+                    $sql = $link->query("UPDATE kas SET keterangan = '$ket', tgl = '$tgl', jumlah = '$jml' WHERE kode = '$kode'");
                     if ($sql) {
                 ?>
                         <script type="text/javascript">

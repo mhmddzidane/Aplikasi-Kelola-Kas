@@ -22,9 +22,9 @@
 
                             <?php
                             $no = 1;
-                            require 'function.php';
+                            require 'config.php';
 
-                            $sql = $conn->query("SELECT * FROM kas WHERE jenis = 'Keluar'");
+                            $sql = $link->query("SELECT * FROM kas WHERE jenis = 'Keluar'");
                             while ($data = $sql->fetch_assoc()) {
 
                             ?>
@@ -116,7 +116,7 @@
                     $tgl = $_POST['tgl'];
                     $jml = $_POST['jml'];
 
-                    $sql = $conn->query("INSERT INTO kas (kode, keterangan, tgl, jumlah, jenis, keluar)VALUES('$kode','$ket','$tgl',0,'keluar','$jml')");
+                    $sql = $link->query("INSERT INTO kas (kode, keterangan, tgl, jumlah, jenis, keluar)VALUES('$kode','$ket','$tgl',0,'keluar','$jml')");
                     if ($sql) {
                 ?>
                         <script type="text/javascript">
@@ -197,7 +197,7 @@
                     $tgl = $_POST['tgl'];
                     $jml = $_POST['jml'];
 
-                    $sql = $conn->query("UPDATE kas SET keterangan = '$ket', tgl = '$tgl', jumlah = 0, jenis='keluar', keluar='$jml' WHERE kode = '$kode'");
+                    $sql = $link->query("UPDATE kas SET keterangan = '$ket', tgl = '$tgl', jumlah = 0, jenis='keluar', keluar='$jml' WHERE kode = '$kode'");
                     if ($sql) {
                 ?>
                         <script type="text/javascript">

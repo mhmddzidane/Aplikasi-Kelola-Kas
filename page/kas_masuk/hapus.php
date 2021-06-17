@@ -1,8 +1,9 @@
 <?php
+require 'config.php';
 
 $id = $_GET['id'];
 
-$sql = $koneksi->query("DELETE FROM kas WHERE kode='$id'");
+$sql = $link->query("DELETE FROM kas WHERE kode='$id'");
 
 if ($sql) {
 ?>

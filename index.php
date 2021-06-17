@@ -1,10 +1,12 @@
 <?php
-// session_start();
+// Initialize the session
+session_start();
 
-// if (!isset($_SESSION["login"])) {
-//     header("location: login.php");
-//     exit;
-// }
+// Check if the user is logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: newlogin.php");
+    exit;
+}
 
 
 ?>
@@ -42,7 +44,7 @@
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 11 Juni 2021 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> Last access : 11 Juni 2021 &nbsp; <a href="logout.php" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">

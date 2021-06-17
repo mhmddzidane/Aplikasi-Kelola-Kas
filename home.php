@@ -1,7 +1,7 @@
 <?php
-require 'function.php';
+require 'config.php';
 
-$sql = $conn->query("SELECT * FROM kas");
+$sql = $link->query("SELECT * FROM kas");
 while ($data = $sql->fetch_assoc()) {
     $jml = $data['jumlah'];
     $total_masuk = $total_masuk + $jml;

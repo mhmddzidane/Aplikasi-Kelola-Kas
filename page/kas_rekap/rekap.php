@@ -24,9 +24,9 @@
 
                             <?php
                             $no = 1;
-                            require 'function.php';
+                            require 'config.php';
 
-                            $sql = $conn->query("SELECT * FROM kas");
+                            $sql = $link->query("SELECT * FROM kas");
                             while ($data = $sql->fetch_assoc()) {
 
                             ?>
